@@ -11,8 +11,10 @@ let house4ImageSrc ='images/house4.png'
 let house5ImageSrc ='images/house5.png'
 let tree1ImageSrc ='images/tree1.png'
 let tree2ImageSrc ='images/tree2.png'
-let cityNameFirst = ["Віт","Порт","Лім","Гал","Кінгс","Бар","Люксін","Мюн","Ген","Сток","Крак","Мак","Рован","Газін","Варш","Тіміс","Заг","Ахар","Дербец","Юрм","Град","Трен","Карг","Осій","Монт"];
-let cityNameLast = ["она","іра","орес","алін","ер","енс","дам","бург","ертур","гаген","ло","ск","анта","ая","град","ов","дів","онікі","піт","ін","овц","слава","єво","єка","віль"];
+let cityNameFirst = ["Віт","Порт","Лім","Гал","Кінгс","Бар","Люксін","Мюн","Ген","Сток",
+"Крак","Мак","Рован","Газін","Варш","Тіміс","Заг","Ахар","Дербец","Юрм","Град","Трен","Карг","Осій","Монт"];
+let cityNameLast = ["она","іра","орес","алін","ер","енс","дам","бург","ертур","гаген",
+"ло","ск","анта","ая","град","ов","дів","онікі","піт","ін","овц","слава","єво","єка","віль"];
 
 const infoBtn = document.getElementById('info-btn');
 const infoText = document.getElementById('info-text');
@@ -65,6 +67,8 @@ function createMatrix() {
 						else if(randNum == 9){
 				img.src = tree2ImageSrc;
 				img.alt = "tree";
+			}
+			}
 			}
 			else {
 				img.src = nothing3ImageSrc;

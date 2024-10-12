@@ -6,7 +6,9 @@
 body {
 	background-image: url('../images/background.jpg');
 	text-align: center;
-	font-family:"fantasy" Chalkduster, fantasy
+	font-family: "Amatic SC", sans-serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 p {
@@ -88,6 +90,9 @@ table {
 	display: inline-block;
 	font-size: 32px;
 	transition-duration: 0.2s;
+	font-family: "Amatic SC", sans-serif;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .buttonInfo{
