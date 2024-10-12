@@ -9,22 +9,26 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body> <!--body-->
+		<audio id="backgroundMusic" loop>
+			<source src="audio/Tiny_town.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
 		<header> <!--header-->
-			<h1>Pixel town generator</h1>
+			<h1>Генератор піксельних міст</h1>
 		</header>
 		<main> <!--main-->
 		<button class="buttonInfo" id="info-btn"><i class="fa fa-info-circle"></i></button>
-		<p id="info-text" class="hidden">Hello, This is a simple pixel town generator, click a button to generate a random town and get a name for it. you can click the gear button for options. Good luck, have fun!</p>
+		<p id="info-text" class="hidden">Вітаю. Це генератор простих піксельних містечок, натисніть кнопку згенерувати аби отримати місто та ім'я для нього, ви можете написнути на кнопку із іконкою шестерень для налаштувань. Гарного дня і гарних міст!</p>
 		<button class="buttonOptions" id="options-btn"><i class="fa fa-cogs"></i></button>
 		<div id="options" class="hidden">
-		<button class="buttonOptions" id="option1"> options_1 </button>
-		<button class="buttonOptions" id="option2"> options_2 </button>
+		<button class="buttonOptions" id="toggleMusicBtn"> <i class="fa fa-volume-up"></i></button>
+		<button class="buttonOptions" id="option2"> <i class="fa fa-building"></i> </button>
 		</div>
 		<article> <!--the generator-->
-			<h2 class="generatorText">THE GENERATOR</h2>
+			<h2 class="generatorText">ГЕНЕРАТОР</h2>
 			<div id="matrix-container"></div> 
-			<h2 class="cityName"id="city-name">City name</h2>
-			<button class="button" id="generate-btn">Generate!</button>
+			<h2 class="cityName"id="city-name">Назва міста</h2>
+			<button class="button" id="generate-btn">Згенерувати!</button>
 			<script src="javascript/JavaScript.js"></script>
 		</article>
 		</main>

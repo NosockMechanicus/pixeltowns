@@ -1,13 +1,18 @@
 let rows = 10; //creating 2d array
 let cols = 10;
 let nothingImageSrc ='images/nothing.png'
+let nothing1ImageSrc ='images/nothing1.png'
+let nothing2ImageSrc ='images/nothing2.png'
+let nothing3ImageSrc ='images/nothing3.png'
 let house1ImageSrc ='images/house1.png'
 let house2ImageSrc ='images/house2.png'
 let house3ImageSrc ='images/house3.png'
 let house4ImageSrc ='images/house4.png'
 let house5ImageSrc ='images/house5.png'
-let cityNameFirst = ["Vit","Port","Lim","Gal","Kings","Bar","Luxin","Mun","Gen","Stock","Krak","Mak","Rovan","Gazian","Wars","Timis","Zag","Achar","Derbec","Jurm","Hrad","Tren","Krag","Osij","Mont"];
-let cityNameLast = ["ona","ira","ores","alin","er","ence","dam","burg","erthur","hagen","law","sk","anta","ya","grad","ov","div","oniki","peat","in","ouc","slava","jevo","eka","ville"];
+let tree1ImageSrc ='images/tree1.png'
+let tree2ImageSrc ='images/tree2.png'
+let cityNameFirst = ["Віт","Порт","Лім","Гал","Кінгс","Бар","Люксін","Мюн","Ген","Сток","Крак","Мак","Рован","Газін","Варш","Тіміс","Заг","Ахар","Дербец","Юрм","Град","Трен","Карг","Осій","Монт"];
+let cityNameLast = ["она","іра","орес","алін","ер","енс","дам","бург","ертур","гаген","ло","ск","анта","ая","град","ов","дів","онікі","піт","ін","овц","слава","єво","єка","віль"];
 
 const infoBtn = document.getElementById('info-btn');
 const infoText = document.getElementById('info-text');
@@ -24,7 +29,7 @@ function createMatrix() {
         for (let j = 0; j < cols; j++) {
             let cell = document.createElement('td'); // Creating a cell
 			let img = document.createElement('img'); // Creating image element
-            let randNum = Math.floor(Math.random() * 11); //Randomization
+            let randNum = Math.floor(Math.random() * 10); //Randomization
 			if (randNum == 1){ // houses
 				img.src = house1ImageSrc;
 				img.alt = "house";
@@ -45,8 +50,24 @@ function createMatrix() {
 				img.src = house5ImageSrc;
 				img.alt = "house";
 			}
+			else if(randNum ==6){
+				img.src = nothing1ImageSrc;
+				img.alt = "empty";
+			}
+			else if(randNum == 7){
+				img.src = nothing2ImageSrc;
+				img.alt = "empty";
+			}
+						else if(randNum == 8){
+				img.src = tree1ImageSrc;
+				img.alt = "tree";
+			}
+						else if(randNum == 9){
+				img.src = tree2ImageSrc;
+				img.alt = "tree";
+			}
 			else {
-				img.src = nothingImageSrc;
+				img.src = nothing3ImageSrc;
 				img.alt = "empty";
 			}
 			setTimeout(() => {
@@ -114,5 +135,27 @@ optionBtn.addEventListener('click', function() {
         options.addEventListener('transitionend', () => {
             options.style.visibility = 'hidden'; // Hiding it
         }, { once: true }); // Only run this once per transition
+    }
+});
+
+const audioElement = document.getElementById('backgroundMusic'); //audio documents
+let isAudioPlaying = false;
+
+document.body.addEventListener('click', function startAudio() { //activation on interaction
+    if (!isAudioPlaying) {
+        audioElement.play();
+        isAudioPlaying = true;
+    }
+    document.body.removeEventListener('click', startAudio);
+});
+
+const toggleMusicBtn = document.getElementById('toggleMusicBtn');
+toggleMusicBtn.addEventListener('click', function () {
+    if (audioElement.paused) {
+        audioElement.play();
+        toggleMusicBtn.innerHTML = '<i class="fa fa-volume-up"></i>'; // Update button text
+    } else {
+        audioElement.pause();
+        toggleMusicBtn.innerHTML = '<i class="fa fa-volume-off"></i>'; // Update button text
     }
 });
