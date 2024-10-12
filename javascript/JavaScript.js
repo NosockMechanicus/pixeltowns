@@ -68,8 +68,6 @@ function createMatrix() {
 				img.src = tree2ImageSrc;
 				img.alt = "tree";
 			}
-			}
-			}
 			else {
 				img.src = nothing3ImageSrc;
 				img.alt = "empty";
